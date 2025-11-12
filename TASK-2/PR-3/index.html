@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document3</title>
+</head>
+
+<body>
+    <script>
+        // let there are 5 subjects ----> hin eng maths sci ss 
+        const hin = 100, eng = 100, maths = 100, sci = 100, ss = 100;
+        per = 0;
+        total = 0;
+        total = hin + eng + maths + sci + ss;
+        per = (total * 100) / 500;
+        if (per >= 91 && per <= 100) {
+            console.log("Your Grade is A");
+        } else if (per >= 71 && per <= 90) {
+            console.log("Your Grade is B");
+        } else if (per >= 51 && per <= 70) {
+            console.log("Your Grade is C");
+        } else if (per >= 31 && per <= 50) {
+            console.log("Your Grade is D");
+        } else {
+            console.log("Your Grade is F");
+            console.log("means = Tu Fail hai")
+        }
+
+    </script>
+</body>
+
+
+</html>
