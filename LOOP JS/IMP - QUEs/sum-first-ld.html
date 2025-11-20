@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let num = 1025;
+        let ld = num % 10;
+        let fd = 0;
+
+        while (num > 9) // not to remove the first digit
+        {
+            num = Math.floor(num / 10);// remove the last digit 
+        }
+        fd = num;
+        document.writeln("The sum of first and last digit of the number is :", fd + ld);
+    </script>
+</body>
+
+</html>
