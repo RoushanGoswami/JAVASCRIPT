@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //WAP to find minimum between four numbers using nested if-else.
+        let num1 = 1, num2 = 2, num3 = 3, num4 = 4;
+
+        if (num1 < num2) {
+            if (num1 < num3) {
+                if (num1 < num4) {
+                    document.writeln("Num1 is minimum !")
+                } else {
+                    document.writeln("num4 is minimum !")
+                }
+            } else {
+                if (num3 < num4) {
+                    document.writeln("num3 is minimum !")
+
+                } else {
+                    document.writeln("num4 is minimum !")
+
+                }
+            }
+
+        } else {
+            if (num2 < num3) {
+                if (num2 < num4) {
+                    document.writeln("num2 is minimum !")
+
+                } else {
+                    document.writeln("num4 is minimum !")
+
+                }
+            } else {
+                if (num3 < num4) {
+                    document.writeln("num3 is minimum !")
+
+                } else {
+                    document.writeln("num4 is minimum !")
+
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

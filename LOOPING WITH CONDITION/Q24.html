@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //WAP to reverse a number using while loop, do…while loop, for loop
+
+        let i = 1;
+        let num = 185;
+        let reverse = 0;
+
+
+        while (num > 0) {
+            let ld = num % 10;
+            reverse = (reverse * 10) + ld;
+            num = Math.floor(num / 10);
+        }
+        document.writeln("Reverse of the given number is : ", reverse);
+
+    </script>
+</body>
+
+</html>
