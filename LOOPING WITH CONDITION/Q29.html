@@ -8,8 +8,49 @@
 </head>
 
 <body>
+    <script>
+        //WAP to check whether a number is Armstrong number or not using while loop, do…while loop, for loop.
+        //while loop
 
-    //WAP to check whether a number is Armstrong number or not using while loop, do…while loop, for loop.
+        // let original = 153;
+        // let num = original;
+        // let sum = 0;
+        // let r = 0;
+
+        // while (num > 0) {
+        //     r = num % 10;
+        //     sum = sum + (r * r * r);
+        //     num = Math.floor(num / 10);
+        // }
+
+        // if (sum === original) {
+        //     console.log("Number is Armstrong.");
+        // }
+        // else {
+        //     console.log("Number is Not Armstrong.");
+        // }
+
+        //do while loop
+
+        let original = 121;
+        let num = original;
+        let sum = 0;
+        let r = 0;
+
+        do {
+            r = num % 10;
+            sum = sum + (r * r * r);
+            num = Math.floor(num / 10);
+        } while (num > 0);
+
+        if (sum === original) {
+            console.log("Number is Armstrong.");
+        }
+        else {
+            console.log("Number is Not Armstrong.");
+        }
+    </script>
+
 
 </body>
 
