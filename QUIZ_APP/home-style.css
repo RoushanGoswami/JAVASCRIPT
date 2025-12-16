@@ -9,6 +9,7 @@ body {
 
 }
 
+
 /* home page  */
 .home-img {
     background-image: url('https://i.pinimg.com/736x/97/f6/d9/97f6d90b4811ad1e400ff047da5815ea.jpg');
@@ -55,4 +56,5 @@ body {
     color: white;
     width: 25%;
     height: 100%;
+
 }
