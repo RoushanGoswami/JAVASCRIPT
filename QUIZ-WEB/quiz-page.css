@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     height: 100vh;
     background: linear-gradient(135deg, #141e30, #243b55);
@@ -127,4 +128,5 @@ button:hover {
     text-align: center;
     font-size: 18px;
     color: #00ffb3;
+
 }
