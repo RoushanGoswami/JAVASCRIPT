@@ -43,7 +43,6 @@ loginForm.addEventListener("submit", function (e) {
 });
 
 // Helper functions
-
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 }
@@ -56,5 +55,4 @@ function showMessage(text, type) {
 
 function resetMessage() {
     message.style.display = "none";
-
 }

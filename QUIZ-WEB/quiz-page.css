@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     height: 100vh;
     background: linear-gradient(135deg, #141e30, #243b55);
@@ -128,5 +127,21 @@ button:hover {
     text-align: center;
     font-size: 18px;
     color: #00ffb3;
+}
 
+
+/* Restart */
+
+#retry {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    /* background: linear-gradient(135deg, #00f2fe, #4facfe); */
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: rgb(255, 255, 0);
 }
