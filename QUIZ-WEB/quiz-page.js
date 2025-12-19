@@ -50,6 +50,7 @@ const quizData = [{
 }
 ];
 
+
 let currentQuestion = 0;
 let score = 0;
 let timeLeft = 60;
@@ -132,4 +133,5 @@ submitBtn.addEventListener("click", () => {
     timeEl.style.display = "none";
 
     resultEl.textContent = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length}`;
+
 });
