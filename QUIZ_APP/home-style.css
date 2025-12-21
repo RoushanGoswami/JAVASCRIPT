@@ -44,6 +44,8 @@ body {
 
 }
 
+
+
 @keyframes quiz-txt {
     0% {
         transform: translateY(550px);
@@ -67,5 +69,6 @@ body {
     height: 100%;
 
 }
+
 
 
