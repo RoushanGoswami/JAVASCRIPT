@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Futuristic Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+        <h1>⚡ Task Manager</h1>
+        <p class="subtitle">Organize • Prioritize • Execute</p>
+
+        <!-- Task Form -->
+        <form id="taskForm" class="glass">
+            <input type="hidden" id="taskId">
+
+            <input type="text" id="title" placeholder="Task Title" required>
+            <textarea id="description" placeholder="Task Description"></textarea>
+
+            <div class="row">
+                <input type="date" id="dueDate" required>
+                <select id="priority">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium">Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+            </div>
+
+            <button type="submit">Save Task</button>
+        </form>
+
+        <!-- Filters -->
+        <div class="controls glass">
+            <select id="filterPriority">
+                <option value="All">All Priorities</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <input type="text" id="searchTask" placeholder="Search tasks...">
+        </div>
+
+        <!-- Task List -->
+        <div id="taskList"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
