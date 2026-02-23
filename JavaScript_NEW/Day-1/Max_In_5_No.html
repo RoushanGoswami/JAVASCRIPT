@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const a = 18, b = 1000, c = 185, d = 120, e = 1;
+        if (a == b && b == c && c == d && d == e && e == a) {
+            console.log("All Are Equal !");
+        }
+        else {
+            if (a > b) {
+                //c,d,e
+                if (a > c) {
+                    //d,e
+                    if (a > d) {
+                        //e
+                        if (a > e) {
+                            console.log("a is max !");
+                        } else {
+                            console.log("e is max !");
+
+                        }
+                    } else {
+                        if (d > e) {
+                            console.log("d is max !")
+                        } else {
+                            console.log("e is max !")
+
+                        }
+                    }
+                } else {
+                    //c,d,e
+                    if (c > d) {
+                        //e
+                        if (c > e) {
+                            console.log("c is max !")
+
+                        } else {
+                            console.log("e is max !")
+
+                        }
+                    } else {
+                        //d, e
+                        if (d > e) {
+                            console.log("d is max !")
+
+                        } else {
+                            console.log("e is max !")
+
+                        }
+                    }
+                }
+            } else {
+                //b,c,d,e
+                if (b > c) {
+                    //d,e
+                    if (b > d) {
+                        //e
+                        if (b > e) {
+                            console.log("b is max !")
+
+                        } else {
+                            console.log("e is max !")
+
+                        }
+                    } else {
+                        //d,e
+                        if (d > e) {
+                            console.log("d is max !")
+
+                        } else {
+                            console.log("e is max !")
+
+                        }
+                    }
+                } else {
+                    //d,e
+                    if (c > d) {
+                        //e
+                        if (c > e) {
+                            console.log("c is max !")
+
+                        } else {
+                            console.log("e is max !")
+
+                        }
+                    } else {
+                        //d,e
+                        if (d > e) {
+                            console.log("d is max !")
+
+                        } else {
+                            console.log("e is max !")
+
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
