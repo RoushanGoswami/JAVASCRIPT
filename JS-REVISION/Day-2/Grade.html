@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const hindi = 90, english = 95, maths = 100, science = 95, sst = 95;
+        const total = hindi + english + maths + science + sst;
+        const percentage = (total * 100) / 500;
+        console.log(percentage)
+        if (percentage >= 91 && percentage <= 100) {
+            console.log("Your Grade Is A !");
+        } else if (percentage >= 71 && percentage <= 90) {
+            console.log("Your Grade Is B !");
+        } else if (percentage >= 51 && percentage <= 70) {
+            console.log("Your Grade Is C !");
+        } else if (percentage >= 31 && percentage <= 50) {
+            console.log("Your Grade Is D !");
+        } else {
+            console.log("You Are Fail !");
+
+        }
+
+
+    </script>
+</body>
+
+</html>

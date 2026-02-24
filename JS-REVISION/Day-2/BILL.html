@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const unit = 50;
+        let cost;
+        if (unit >= 1 && unit <= 20) {
+            cost = unit * 2;
+            console.log("Your Electricity Bill is ", cost + " Rs");
+        } else if (unit >= 21 && unit <= 40) {
+            cost = unit * 4;
+            console.log("Your Electricity Bill is ", cost + " Rs");
+        } else if (unit >= 41 && unit <= 60) {
+            cost = unit * 6;
+            console.log("Your Electricity Bill is ", cost + " Rs");
+        } else if (unit >= 61 && unit <= 80) {
+            cost = unit * 10;
+            console.log("Your Electricity Bill is ", cost + " Rs");
+        } else {
+            cost = unit * 15;
+            console.log("Your Electricity Bill is ", cost + " Rs");
+        }
+
+    </script>
+</body>
+
+</html>
