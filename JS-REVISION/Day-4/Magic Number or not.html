@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- WAP to check whether a number is Magic Number or not using while loop, do…while loop, for loop -->
+
+    <script>
+        // while loop
+        //  let num = 123;
+        //let sum = 0;
+        // let multiply = 1;
+
+        // while (num > 0) {
+        //   let ld = num % 10;//3/2 /1
+        // sum = sum + ld;//s = 3 / s=5 / s=6
+        //  multiply = multiply * ld;//3 / 6
+        //num = Math.floor(num / 10);//12 / 1
+        // }
+
+        //  if (multiply == sum) {
+        //     document.writeln("The Number is a Magic Number !");
+        // } else {
+        //   document.writeln("The Number is Not a Magic Number !");
+
+        //}
+
+        //do while loop
+
+        //        let num = 123;
+        //      let sum = 0;
+        //    let multiply = 1;
+
+        // do {
+        //   let ld = num % 10;//3/2 /1
+        //   sum = sum + ld;//s = 3 / s=5 / s=6
+        // multiply = multiply * ld;//3 / 6
+        //  num = Math.floor(num / 10);//12 / 1
+
+        //  } while (num > 0);
+
+
+        // if (multiply == sum) {
+        //   document.writeln("The Number is a Magic Number !");
+        // } else {
+        //    document.writeln("The Number is Not a Magic Number !");
+
+        // }
+
+        //for loop
+
+        let num = 123;
+        let sum = 0;
+        let multiply = 1;
+
+        for (num; num > 0; num = Math.floor(num / 10)) {
+
+            let ld = num % 10;
+            sum = sum + ld;
+            multiply = multiply * ld;
+        }
+
+        if (multiply == sum) {
+            document.writeln("The Number is a Magic Number !");
+        } else {
+            document.writeln("The Number is Not a Magic Number !");
+
+        }
+    </script>
+</body>
+
+</html>
