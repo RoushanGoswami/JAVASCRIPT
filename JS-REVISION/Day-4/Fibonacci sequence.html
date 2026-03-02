@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- WAP to print Fibonacci sequence using while loop, do…while loop, for loop. -->
+<!-- 0 1 1 2 3 5 8 13 -->
+
+<body>
+    <script>
+        //while loop 
+        //       let i = 1;
+        //     let first = 0;
+        //   let second = 1;
+        //   document.writeln("0");
+        //   document.writeln("1");
+        // while (i <= 10) {
+        //    let third = first + second;
+        //  document.writeln(third);
+        //  first = second;
+        //  second = third;
+        //  i++;
+        //}
+
+        //do while loop
+
+        // let i = 1;
+        // let first = 0;
+        // let second = 1;
+        // document.writeln("0");
+        //   document.writeln("1");
+        // do {
+
+        //     third = first + second;
+        //     document.writeln(third);
+        //     first = second;
+        //     second = third;
+        //     i++;
+        // } while (i <= 10);
+
+        //for loop
+        let i = 1;
+        let first = 0;
+        let second = 1;
+        document.writeln("0");
+        document.writeln("1");
+
+        for (i = 1; i <= 10; i++) {
+
+            let third = first + second;
+            document.writeln(third);
+            first = second;
+            second = third;
+        }
+
+    </script>
+</body>
+
+</html>

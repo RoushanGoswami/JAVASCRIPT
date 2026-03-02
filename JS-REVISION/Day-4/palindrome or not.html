@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- WAP to check whether a number is palindrome or not using while loop, do…while loop, for loop. -->
+<!-- let num = 11;
+let temp = num;
+let reverse = 0;
+for (let temp; temp > 0; temp = Math.floor(temp / 10)) {
+let ld = temp % 10;
+reverse = (reverse * 10) + ld;
+
+}
+document.writeln(num)
+
+document.writeln(temp)
+if (num === reverse) {
+document.writeln("Yes , it is palindrome !");
+} else {
+document.writeln("No , it is not palindrome !");
+} -->
+
+<body>
+    <script>
+        // while loop 
+
+        //    let num = 1881;
+        //   let temp = num;
+        //  let reverse = 0;
+        //   while (temp > 0) { // 123
+        //     let ld = temp % 10;//3
+        //   reverse = (reverse * 10) + ld; // rev = 3
+        //   temp = Math.floor(temp / 10); //12
+        // }
+
+        //    if (num === reverse) {
+        //       document.writeln("Yes , it is palindrome !");
+        // } else {
+        //   document.writeln("No , it is not palindrome !");
+        // }
+
+
+
+        // do while loop
+        //    let num = 121;
+        //  let temp = num;
+        //let reverse = 0;
+        //   do {
+        //      let ld = temp % 10;
+        //     reverse = (reverse * 10) + ld;
+        //   temp = Math.floor(temp / 10);
+
+        // } while (temp > 0);
+
+
+        // if (num === reverse) {
+        //   document.writeln("Yes , it is palindrome !");
+        // } else {
+        //   document.writeln("No , it is not palindrome !");
+        // }
+
+        // for loop 
+
+        let num = 151;
+        let temp = num;
+        let reverse = 0;
+
+        for (temp; temp > 0; temp = Math.floor(temp / 10)) {
+
+            let ld = temp % 10;
+            reverse = (reverse * 10) + ld;
+        }
+        if (num === reverse) {
+            document.writeln("Yes , it is palindrome !");
+        } else {
+            document.writeln("No , it is not palindrome !");
+        }
+
+    </script>
+</body>
+
+</html>
