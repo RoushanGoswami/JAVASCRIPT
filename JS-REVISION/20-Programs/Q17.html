@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 17. Write a JavaScript program to calculate total marks and percentage of 5 subjects.
+      let hindi = 95,
+        english = 95,
+        maths = 85,
+        science = 95,
+        sst = 89;
+      let totalMarks = hindi + english + science + sst + maths;
+      let Percentage = ((totalMarks * 100) / 500).toFixed(2);
+      document.writeln("Total Marks : " + totalMarks + "<br>");
+      document.writeln("Percentage : " + Percentage);
+    </script>
+  </body>
+</html>
