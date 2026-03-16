@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //3. Write a function that takes an array and returns the smallest number in the array.
+        function SmallestNum(arr) {
+            let smallest = arr[0];
+            for (let i = 0; i < arr.length; i++) {
+                if (smallest > arr[i]) {
+                    smallest = arr[i];
+                }
+            }
+            return smallest;
+        }
+        const arr = [1, 2, 13, -44, 5, 106, 7, 98, 9, 10];
+        const ans = SmallestNum(arr);
+        document.writeln(ans);
+    </script>
+</body>
+
+</html>

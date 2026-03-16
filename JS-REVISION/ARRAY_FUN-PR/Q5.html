@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  5. Write a function that counts how many even numbers are present in an array.
+        function CountEven(arr) {
+            let count = 0;
+            arr.forEach((e) => {
+                if (e % 2 == 0) {
+                    document.writeln(e);
+                    count++;
+                }
+            });
+            return count;
+        }
+        const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const ans = CountEven(arr);
+        document.writeln("<br> Even Count = ", ans);
+    </script>
+</body>
+
+</html>
