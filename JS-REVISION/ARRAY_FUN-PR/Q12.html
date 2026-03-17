@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 12. Write a function that takes an array of numbers and returns the square of each element.
+
+        function SquareOfElements(arr) {
+            const square = arr.map(n => n ** 2);
+            return square;
+
+            //or
+
+            //  let temp = [];
+            //for (let i = 0; i < arr.length; i++) {
+            //  let temp = document.writeln(arr[i] ** 2);
+            // }
+            // return temp;
+        }
+
+
+        const arr = [11, 12, 13, 4, 5];
+        const ans = SquareOfElements(arr);
+        document.writeln(ans);
+    </script>
+</body>
+
+</html>
