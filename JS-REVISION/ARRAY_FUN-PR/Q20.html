@@ -11,9 +11,13 @@
     <script>
         // 20. Write a function that returns a new array containing numbers divisible by 5.
         function DivisibleBy5(arr) {
-            
-            return;
+            let By5 = arr.filter(num => num % 5 == 0);
+
+            return By5;
         }
+        const arr = [1, 5, 8, 7, 9, 40, 2, 56, 55];
+        const ans = DivisibleBy5(arr);
+        document.writeln(ans);
 
 
     </script>
