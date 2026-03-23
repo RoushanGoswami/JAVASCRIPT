@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 16. Write a function that returns the second largest number in an array.
+        function SecondLargest(arr) {
+            let secondLargest = arr.sort((a, b) => b - a);// simple isko descending order me karo then jo second
+            //number pe hai usko return kr do
+            return secondLargest[1];
+        }
+        const arr = [1, 2, 4, 78, 39, 7];
+        const ans = SecondLargest(arr);
+        document.writeln(ans);
+    </script>
+</body>
+
+</html>

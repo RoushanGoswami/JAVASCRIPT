@@ -10,7 +10,28 @@
 <body>
     <script>
         // 15. Write a function that sorts an array in ascending order without using sort().
-        
+
+        //       function SortInAscending(arr) {
+        //         let Sorted = arr.sort((a, b) => a - b);
+        //       return Sorted;
+        //  }
+        // const arr = [1, 4, 987, 9, 5, 6];
+        // const ans = SortInAscending(arr);
+        // document.writeln(ans);
+
+        function SortInAscending(arr) {
+            let temp;
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    temp = arr[i];
+                    arr
+                }
+            }
+        }
+
+        const arr = [10, 4, 987, 9, 5, 6];
+        const ans = SortInAscending(arr);
+        document.writeln(ans)
     </script>
 </body>
 

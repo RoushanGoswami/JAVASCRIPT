@@ -12,14 +12,26 @@
         //    17. Write a function that finds the total number of elements greater than 10 in an array.
 
         function GreaterElement(arr) {
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
 
+                if (arr[i] > 10) {
+                    count++;
+                }
+
+            }
+            return count;
         }
 
-        const arr = [1, 45, , 4, 7, 96, 7, 9, 7];
+
+
+        const arr = [1, 15, 4, 7, 17, 9, 7];
         const ans = GreaterElement(arr);
         document.writeln(ans);
 
     </script>
+
+
 </body>
 
 </html>
