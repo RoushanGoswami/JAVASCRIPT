@@ -96,15 +96,13 @@ const quoteList = [
     { quote: "Every moment is a fresh beginning.", author: "T.S. Eliot" },
     { quote: "Die with memories, not dreams.", author: "Unknown" }];
 
-let index = parseInt(localStorage.getItem("index"));// to get the index value from lC storage
-
-
+let index = parseInt(localStorage.getItem("index")) || 0;// to get the index value from lC storage
 
 
 function displayQuotes() {
 
     QuoteScreen.style.backgroundColor = localStorage.getItem("color");// getItem --> ye use krne ke kaam aata hai also ye 
-    // bahar likha jata hai 
+    // bahar likha jata hai    
     textQoute.textContent = quoteList[index].quote;
     textAuthor.textContent = quoteList[index].author;
 }
@@ -117,13 +115,18 @@ buttonNext.addEventListener("click", () => {
     }
 
     index++;
-    const str = Math.floor(Math.random() * 16581375).toString(16);// to generate numbers from 1 to 9
-    const color = QuoteScreen.style.backgroundColor = "#" + str;
+    // to generate numbers from 1 to 9
+    const str = Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0");// 6 character se zyda na ho 
+    const color = "#" + str;
     localStorage.setItem("index", index.toString());// to store the index value in Lc storage 
     localStorage.setItem("color", color);
     buttonPrev.classList = "btn btn-outline-primary m-2";
     displayQuotes();
 });
+
+
 
 buttonPrev.addEventListener("click", () => {
     if (index === 0) {
@@ -131,10 +134,31 @@ buttonPrev.addEventListener("click", () => {
         return;
     }
     index--;
-    const str = Math.floor(Math.random() * 16581375).toString(16);
-    const color = QuoteScreen.style.backgroundColor = "#" + str;
+    const str = Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0");// 6 character se zyda na ho 
+    const color = "#" + str;
     localStorage.setItem("color", color);
     localStorage.setItem("index", index.toString());// to store the index value in Lc storage 
     displayQuotes();
 });
 
+buttonlike.addEventListener("click", () => {
+    // like btn ke click hone pe jo v quotes hai wo store hone chahiye
+    // jo ki index based hai
+    // to do this hame local storage me favlist create krnna hoga
+    // const data = quoteList[index];
+    // const str = JSON.stringify(data);
+    // localStorage.setItem("favlist", str);
+    // ye uper ke codes se bas one quote hin liked ho rha hai
+    // localStorage.setItem("favList", JSON.stringify(quoteList[index]));// kaam to same hai bas one-line me hai
+
+    // so to store all fav quotes there hame ek array create krna hoga jo ki local storage se get kre
+    // pehle data ko and then ham usko local storage me daal denge
+    // const FavQuotes = [];// iski ek problem hai ki ye baar baar new empty array banayega aur ek hi quote store hote rahega
+    // so ham isse LC se get kr lenge
+    const FavQuotes = JSON.parse(localStorage.getItem("favList")) || []; // str to array
+    FavQuotes.push(quoteList[index]);
+    localStorage.setItem("favList", JSON.stringify(FavQuotes));
+
+})
