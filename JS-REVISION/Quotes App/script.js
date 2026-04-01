@@ -158,7 +158,15 @@ buttonlike.addEventListener("click", () => {
     // const FavQuotes = [];// iski ek problem hai ki ye baar baar new empty array banayega aur ek hi quote store hote rahega
     // so ham isse LC se get kr lenge
     const FavQuotes = JSON.parse(localStorage.getItem("favList")) || []; // str to array
-    FavQuotes.push(quoteList[index]);
-    localStorage.setItem("favList", JSON.stringify(FavQuotes));
+    const res = FavQuotes.findIndex((quote) => quote.quote === quoteList[index].quote);// res me store kiya un quotes ko jo
+    // dobara liked huye ho usko compare krne ke liye  
+    if (res === -1) {
+        alert("Quote added successfully !");
+        FavQuotes.push(quoteList[index]);
+        localStorage.setItem("favList", JSON.stringify(FavQuotes));
+    } else {
+        alert("Quote is already Added !")
+    }
+
 
 })
