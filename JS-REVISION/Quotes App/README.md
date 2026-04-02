@@ -109,6 +109,7 @@ This project is not just a simple quote generator — it's a **fully functional 
 ## 📸 Preview
 
 > A sleek, glowing, futuristic quote interface with smooth transitions and interactive buttons.
+[https://drive.google.com/file/d/1DgloPZPA-qNNG2KLWYULYB411l-GjRJ4/view?usp=sharing](https://drive.google.com/file/d/1ejqBaLzQFh1dDc0PL-v5oOY7hJu0zGu0/view?usp=sharing)
 
 ---
 
@@ -132,5 +133,5 @@ If you like this project or want to collaborate, feel free to reach out!
 
 ⭐ **Don't forget to star this project if you liked it!**
 
-[https://drive.google.com/file/d/1DgloPZPA-qNNG2KLWYULYB411l-GjRJ4/view?usp=sharing](https://drive.google.com/file/d/1ejqBaLzQFh1dDc0PL-v5oOY7hJu0zGu0/view?usp=sharing)
+
 
