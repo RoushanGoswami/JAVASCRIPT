@@ -162,10 +162,10 @@ buttonlike.addEventListener("click", () => {
     // dobara liked huye ho usko compare krne ke liye  
     if (res === -1) {
         alert("Quote added successfully !");
-        FavQuotes.push(quoteList[index]);
+        FavQuotes.push(quoteList[index]);               
         localStorage.setItem("favList", JSON.stringify(FavQuotes));
     } else {
-        alert("Quote is already Added !")
+        alert("Quote is already Added !");
     }
 
 

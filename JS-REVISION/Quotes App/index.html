@@ -13,22 +13,30 @@
 
 <body style="height: 100vh;width: 100%;display: flex;justify-content: center;align-items: center;">
 
-    <div
-        style="height: 100vh;width: 100%;display: flex;justify-content: center;align-items: center;flex-direction: column;">
-        <div id="quotes-screen"
-            style="height: 25%;width: 50%;display:flex;justify-content: center;align-items:center;flex-direction: column;box-shadow:rgb(160, 158, 158) 5px 5px 5px 5px;border-radius: 10px;padding:50px;border: 5px;margin-bottom: 15px;">
-            <p id="text-quote" class="fw-bold fs-3">"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla,
-                ipsa."</p>
-            <p id="text-author" class="fw-bold fs-5">~ Lorem, ipsum.</p>
+    <body>
+        <div class="app-container">
+            <div id="quotes-screen" class="quote-card">
+                <p id="text-quote">"Lorem ipsum dolor sit amet consectetur."</p>
+                <p id="text-author">~ Lorem Ipsum</p>
+            </div>
+
+            <div class="controls">
+                <button id="btn-pre" class="neo-btn">
+                    <i class="ri-skip-back-fill"></i> Previous
+                </button>
+
+                <button id="btn-like" class="neo-btn like-btn">
+                    Like <i class="ri-heart-line"></i>
+                </button>
+
+                <button id="btn-next" class="neo-btn">
+                    Next <i class="ri-skip-forward-fill"></i>
+                </button>
+            </div>
+
+            <a class="fav-btn" href="Favlist.html">Favourite</a>
         </div>
-        <div class="d-flex justify-content-center bg-black rounded-2 p-2">
-            <button id="btn-pre" class="btn btn-outline-primary m-2 "><i class="ri-skip-back-fill"></i>
-                Previous</button>
-            <button id="btn-like" class="btn btn-outline-danger m-2">Like <i class="ri-heart-line"></i></button>
-            <button id="btn-next" class="btn btn-outline-warning m-2">Next <i class="ri-skip-forward-fill"></i></button>
-        </div>
-        <a class="btn btn-secondary m-2" href="Favlist.html">Favourite</a>
-    </div>
+    </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
