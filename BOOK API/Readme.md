@@ -1,5 +1,4 @@
-output
-https://drive.google.com/file/d/1uRRJbR2eTOJ3cCIbyLAujivZIMIi4g7k/view?usp=sharing
+
 Here is a **professional `README.md`** file you can use for your **Book API UI project** in the `JAVASCRIPT/BOOK API` folder on your GitHub repo. It explains what the project does, how it works, and how to set it up — perfect for developers visiting your repository.
 
 ---
