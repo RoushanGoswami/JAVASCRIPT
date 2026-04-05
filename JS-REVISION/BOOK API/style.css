@@ -91,22 +91,28 @@ body {
 /* Books Container */
 .books-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    flex: 1;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+    /* spacing between cards */
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    /* ensures proper sizing */
 }
 
 /* Book Card */
 .book-card {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(15px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    text-align: center;
     transition: 0.4s ease;
-    transform: translateY(0);
+    height: 100%;
+    /* key to prevent overlap */
 }
 
 /* Hover Animation */
@@ -139,3 +145,86 @@ body {
     backdrop-filter: blur(10px);
 }
 
+/* new css */
+/* Books container */
+.books-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Card */
+.card {
+    background: linear-gradient(135deg, #FFDCDC, #FFF2EB, #FFE8CD, #FFD6BA);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Card image */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card body */
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Card title */
+.card-title {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+/* Author */
+.text-secondary {
+    color: #555;
+}
+
+/* Card details */
+.card-body h5.fs-6 {
+    font-size: 0.85rem;
+    color: #444;
+}
+
+/* Button */
+.btn-outline-success {
+    margin-top: 10px;
+    border-radius: 50px;
+    border: 2px solid #FFD6BA;
+    background-color: #FFF2EB;
+    color: #333;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-outline-success:hover {
+    background-color: #FFE8CD;
+    border-color: #FFD6BA;
+    transform: scale(1.05);
+    color: #333;
+}
