@@ -1,6 +1,4 @@
 
-Here is a **professional `README.md`** file you can use for your **Book API UI project** in the `JAVASCRIPT/BOOK API` folder on your GitHub repo. It explains what the project does, how it works, and how to set it up — perfect for developers visiting your repository.
-
 ---
 
 ```markdown
