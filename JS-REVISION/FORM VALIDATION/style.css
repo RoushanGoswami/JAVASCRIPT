@@ -1,0 +1,127 @@
+/* BODY */
+body {
+    background: linear-gradient(135deg, #2C3639, #3F4E4F);
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* FUTURISTIC GRID BACKGROUND */
+.bg-grid {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background:
+        linear-gradient(rgba(220, 215, 201, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(220, 215, 201, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveGrid 15s linear infinite;
+}
+
+@keyframes moveGrid {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-200px, -200px);
+    }
+}
+
+/* CARD */
+.custom-card {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    border: 1px solid rgba(162, 123, 92, 0.3);
+    box-shadow: 0 0 30px rgba(162, 123, 92, 0.2);
+    color: #DCD7C9;
+    animation: fadeUp 1s ease;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* INPUT */
+.custom-input .form-control {
+    background: transparent;
+    border: 1px solid #A27B5C;
+    color: #DCD7C9;
+    transition: 0.3s;
+}
+
+/* LABEL */
+.custom-input label {
+    color: #A27B5C;
+}
+
+/* INPUT FOCUS GLOW */
+.custom-input .form-control:focus {
+    border-color: #DCD7C9;
+    box-shadow: 0 0 10px #A27B5C;
+    background: transparent;
+    color: #DCD7C9;
+}
+
+/* BUTTON */
+.custom-btn {
+    background: linear-gradient(45deg, #A27B5C, #DCD7C9);
+    border: none;
+    color: #2C3639;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* BUTTON HOVER */
+.custom-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #A27B5C;
+}
+
+/* SHIMMER EFFECT */
+.custom-btn::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transform: rotate(25deg);
+    transition: 0.6s;
+}
+
+.custom-btn:hover::after {
+    left: 120%;
+}
+
+/* VALIDATION COLORS */
+.was-validated .form-control:invalid {
+    border-color: #ff6b6b;
+}
+
+.was-validated .form-control:valid {
+    border-color: #A27B5C;
+}
+
+/* RESPONSIVE */
+@media (max-width: 400px) {
+    .custom-card {
+        width: 90%;
+    }
+}
