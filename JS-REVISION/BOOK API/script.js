@@ -4,12 +4,12 @@ const SearchButton = document.getElementById("searchBtn");
 const booksContainer = document.getElementById("booksContainer")
 // display function 
 
-function DisplayBooks(books) {
-    const div = document.createElement("div");
+function DisplayBooks() {
+ const books = JSON.parse(localStorage.getItem("books"))||[];//  get data from local storage
+ booksContainer.innerHTML = "";// to avoid duplicates 
+   books.map((book)=>{
+     const div = document.createElement("div");
     div.innerHTML = "";
-    // JSON.parse(localStorage.getItem(book));
-    // first you have to create
-    const book = books[0];// to get only one book at one time search
     div.innerHTML = `<div class="card p-2" style="width: 18rem;">
             <img src=${book.volumeInfo.imageLinks?.thumbnail == undefined ? "https://img.freepik.com/free-vector/text-books-library-isolated-icon_24877-83372.jpg?semt=ais_incoming&w=740&q=80" : book.volumeInfo.imageLinks.thumbnail} class="card - img - top" alt="Book-IMG"> 
                  <div class= "card-body">
@@ -23,8 +23,7 @@ function DisplayBooks(books) {
                 </div >
                 </div > `
     booksContainer.appendChild(div);
-    const arr = [];
-
+   })
 }
 
 function FetchBooks() {
@@ -33,7 +32,19 @@ function FetchBooks() {
     fetch(BaseURL)
         .then((res) => res.json())
         .then((data) => {
-            // data.items se map ke through ham sab data ko check karenge then display karenge
+         // get the old data from local storage 
+         const books = JSON.parse(localStorage.getItem("books"))||[];// now add the data in the variable (books) to show it on UI
+         books.unshift(data.items[0]);// show it line wise 
+            console.log(data)
+            // now save the updated data using setItem 
+            localStorage.setItem("books",JSON.stringify(books));
+            DisplayBooks();//--> work of this fun is to get the data and then display it, that's all  
+        });
+}
+// FetchBooks();
+SearchButton.addEventListener("click", FetchBooks)
+// DRIVE JS = https://drive.google.com/drive/folders/1svdd9yY6tk58RNt-bAwYSb-cPaLxnAXG
+   // data.items se map ke through ham sab data ko check karenge then display karenge
             // <p class="card-text">${book.volumeInfo.description == undefined ? "No description" : book.volumeInfo.description}</p>
             // data.items.map((e) => {
             //     console.log(e.volumeInfo.imageLinks?.thumbnail == undefined ? "No image" : e.volumeInfo.imageLinks.thumbnail)
@@ -43,10 +54,5 @@ function FetchBooks() {
             // })
             // console.log(data)
             // call the books display function here !
-            console.log(data)
-            DisplayBooks(data.items);// so that ki yaha se full data call up ho and server se aaye 
-        });
-}
-// FetchBooks();
-SearchButton.addEventListener("click", FetchBooks)
-// DRIVE JS = https://drive.google.com/drive/folders/1svdd9yY6tk58RNt-bAwYSb-cPaLxnAXG
+
+            // localStorage me always get it first (data) then add it , update (set item )
