@@ -5,11 +5,11 @@ const booksContainer = document.getElementById("booksContainer")
 // display function 
 
 function DisplayBooks(books) {
+    const div = document.createElement("div");
     div.innerHTML = "";
     // JSON.parse(localStorage.getItem(book));
     // first you have to create
     const book = books[0];// to get only one book at one time search
-    const div = document.createElement("div");
     div.innerHTML = `<div class="card p-2" style="width: 18rem;">
             <img src=${book.volumeInfo.imageLinks?.thumbnail == undefined ? "https://img.freepik.com/free-vector/text-books-library-isolated-icon_24877-83372.jpg?semt=ais_incoming&w=740&q=80" : book.volumeInfo.imageLinks.thumbnail} class="card - img - top" alt="Book-IMG"> 
                  <div class= "card-body">
@@ -23,11 +23,7 @@ function DisplayBooks(books) {
                 </div >
                 </div > `
     booksContainer.appendChild(div);
-    // let arr = JSON.parse(localStorage.getItem("BooksList")) || [];
-    // arr.unshift(book)
-    // const BookData = localStorage.setItem("BooksList", JSON.stringify(arr));
-    // console.log(BookData);
-    // DisplayBooks();
+    const arr = [];
 
 }
 
