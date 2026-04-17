@@ -5,8 +5,8 @@ const booksContainer = document.getElementById("booksContainer")
 // display function 
 
 function DisplayBooks() {
- const books = JSON.parse(localStorage.getItem("books"))||[];//  get data from local storage
- booksContainer.innerHTML = "";// to avoid duplicates 
+  const books = JSON.parse(localStorage.getItem("books"))||[];//  get data from local storage
+  booksContainer.innerHTML = "";// to avoid duplicates 
    books.map((book)=>{
      const div = document.createElement("div");
     div.innerHTML = "";
@@ -17,8 +17,7 @@ function DisplayBooks() {
                  <h5 class="card-title text-secondary"> by ${book.volumeInfo.authors == undefined ? "Unknown" : book.volumeInfo.authors[0]}</h5>
                  <h5 class="card-title fs-6">Publish Date : ${book.volumeInfo?.publishedDate == undefined ? "No Data Found !" : book.volumeInfo.publishedDate}</h5>
                  <h5 class="card-title fs-6">Language : ${book.volumeInfo?.language == undefined ? "No Data Found !" : book.volumeInfo.language}</h5>
-                 <h5 class="card-title text-light-50 fs-6">Page Count : ${book.volumeInfo?.pageCount == undefined ? "No Data Found !" : book.volumeInfo.pageCount}</h5>
-                 
+                 <h5 class="card-title text-light-50 fs-6">Page Count : ${book.volumeInfo?.pageCount == undefined ? "No Data Found !" : book.volumeInfo.pageCount}</h5>  
                 <a href=${book.volumeInfo.previewLink} class="btn btn-outline-success">Preview</a>
                 </div >
                 </div > `
@@ -43,6 +42,7 @@ function FetchBooks() {
 }
 // FetchBooks();
 SearchButton.addEventListener("click", FetchBooks)
+DisplayBooks();
 // DRIVE JS = https://drive.google.com/drive/folders/1svdd9yY6tk58RNt-bAwYSb-cPaLxnAXG
    // data.items se map ke through ham sab data ko check karenge then display karenge
             // <p class="card-text">${book.volumeInfo.description == undefined ? "No description" : book.volumeInfo.description}</p>
