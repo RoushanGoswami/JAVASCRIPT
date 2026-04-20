@@ -197,7 +197,7 @@ function showScore() {
     scoreShowUI.innerHTML = `
         🎉 Quiz Completed! <br><br>
         Your Score: <b>${score} / ${QuestionBank.length}</b> <br><br>
-        ${score === QuestionBank.length ? "🔥 Perfect Score!" : ""}
+        ${score === QuestionBank.length ? "🔥 Perfect Score!" : "Not Good !"}
         
     `;
 
