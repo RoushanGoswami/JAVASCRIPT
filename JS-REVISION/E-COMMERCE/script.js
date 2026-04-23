@@ -2,12 +2,15 @@ const productBox = document.getElementById("Product-Box");
 const allProducts = [];
 //Add to cart 
 async function addToCart(i) {
-    // const res = await fetch("https://dummyjson.com/products");
-    // const data = await res.json();
+    const res = await fetch("https://dummyjson.com/products");
+    const data = await res.json();
     let arr = JSON.parse(localStorage.getItem("carts")) || [];
-    arr.unshift(data.allProducts[i]);
+    arr.unshift(allProducts[i]);
     localStorage.setItem("carts", JSON.stringify(arr));
 }
+
+
+
 
 // Display Products 
 function displayProducts(products) {
@@ -41,8 +44,8 @@ function displayProducts(products) {
 async function fetchProducts() {
     const res = await fetch("https://dummyjson.com/products"); // put async and await together to handle the delay! 
     const data = await res.json();
-    AllProducts = data.products;
-    // console.log(data);
+    allProducts = data.products;
+    console.log(data);
     displayProducts(data.products);
 }
 fetchProducts();

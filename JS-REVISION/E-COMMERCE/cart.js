@@ -1,10 +1,17 @@
 const cartsDiv = document.getElementById("cart-div");
+// remove items 
+function removeItem(i) {
+    let arr = JSON.parse(localStorage.getItem("carts")) || [];// get data
+    arr.splice(i, 1);// delete
+    localStorage.setItem("carts", JSON.stringify(arr));// update 
+    displayCartsProducts();
+}
 
 // Display Carts Products 
-
 function displayCartsProducts() {
-    let carts = JSON.parse(localStorage.getItem("carts")) || [];
-    carts.map((e) => {
+    cartsDiv.innerHTML = "";
+    const carts = JSON.parse(localStorage.getItem("carts")) || [];
+    carts.map((e, i) => {
         const div = document.createElement("div");
         div.innerHTML = ` <div class="d-flex flex-column align-items-center">
             <div class="card mb-3 m-2" style="max-width: 540px;">
@@ -31,11 +38,5 @@ function displayCartsProducts() {
 
 }
 
-// remove items 
-function removeItem() {
-    let arr = JSON.parse(localStorage.getItem("carts")) || [];// get data
-    arr.splice(i, 1);// delete
-    localStorage.setItem("carts", JSON.stringify(arr));// update 
-    displayCartsProducts();
-}
+
 displayCartsProducts();
