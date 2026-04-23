@@ -1,24 +1,28 @@
+const productBox = document.getElementById("Product-Box");
 // Display Products 
-function displayProducts() {
-    div.innerHTML = "";
-    const div = document.createElement("div");
-    div.innerHTML = `  <div class="card p-0" style="width: 18rem;">
-                <img src="https://www.rachanacraft.com/images/product-06.jpg" class="card-img-top" alt="...">
+function displayProducts(products) {
+    productBox.innerHTML = "";
+    products.map((product) => {
+        const div = document.createElement("div");
+        div.innerHTML = `<div class="card mt-3 m-0"  >
+                <img src=${product.images[0]} class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card’s content.</p>
+                    <h5 class="card-titlem fs-5 fw-bolder">${product.title}</h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
+                <li class="list-group-item fs-5">Price : ₹${((product.price) * 93).toFixed(2)}</li>
+                    <li class="list-group-item">Category : ${product.category}</li>
+                    <li class="list-group-item">Rating : ${product.rating} ⭐</li>
+                    <li class="list-group-item">${product.warrantyInformation}</li>
                 </ul>
                 <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <button href="#" class="btn btn-warning rounded-3 shadow">Add to cart</button>
+                 
                 </div>
-            </div>`
+            </div>`;
+        productBox.appendChild(div);
+    })
+
 }
 
 
@@ -28,6 +32,12 @@ async function fetchProducts() {
     const res = await fetch("https://dummyjson.com/products"); // put async and await together to handle the delay! 
     const data = await res.json();
     console.log(data);
-    displayProducts();
+    displayProducts(data.products);
 }
 fetchProducts();
+
+
+// google form
+// https://forms.gle/Jsv28wm3AhmhqfnU9
+//SHEET
+// https://docs.google.com/spreadsheets/d/1YzSOsGqwZGShudAcGKy_T94W1pfjRxipZB2gdRmAXGI/edit?resourcekey=&gid=2005170337#gid=2005170337
