@@ -1,8 +1,18 @@
 const productBox = document.getElementById("Product-Box");
+const allProducts = [];
+//Add to cart 
+async function addToCart(i) {
+    // const res = await fetch("https://dummyjson.com/products");
+    // const data = await res.json();
+    let arr = JSON.parse(localStorage.getItem("carts")) || [];
+    arr.unshift(data.allProducts[i]);
+    localStorage.setItem("carts", JSON.stringify(arr));
+}
+
 // Display Products 
 function displayProducts(products) {
     productBox.innerHTML = "";
-    products.map((product) => {
+    products.map((product, i) => {
         const div = document.createElement("div");
         div.innerHTML = `<div class="card mt-3 m-0"  >
                 <img src=${product.images[0]} class="card-img-top" alt="...">
@@ -16,7 +26,7 @@ function displayProducts(products) {
                     <li class="list-group-item">${product.warrantyInformation}</li>
                 </ul>
                 <div class="card-body">
-                    <button href="#" class="btn btn-warning rounded-3 shadow">Add to cart</button>
+                    <button onclick= "addToCart(${i})" class="btn btn-warning rounded-3 shadow">Add to cart</button>
                  
                 </div>
             </div>`;
@@ -31,7 +41,8 @@ function displayProducts(products) {
 async function fetchProducts() {
     const res = await fetch("https://dummyjson.com/products"); // put async and await together to handle the delay! 
     const data = await res.json();
-    console.log(data);
+    AllProducts = data.products;
+    // console.log(data);
     displayProducts(data.products);
 }
 fetchProducts();
