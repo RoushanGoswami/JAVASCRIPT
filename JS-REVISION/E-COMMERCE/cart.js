@@ -1,4 +1,5 @@
 const cartsDiv = document.getElementById("cart-div");
+const totalPrice = document.getElementById("totalPrice");
 // remove items 
 function removeItem(i) {
     let arr = JSON.parse(localStorage.getItem("carts")) || [];// get data
@@ -9,9 +10,11 @@ function removeItem(i) {
 
 // Display Carts Products 
 function displayCartsProducts() {
+    let total = 0;
     cartsDiv.innerHTML = "";
     const carts = JSON.parse(localStorage.getItem("carts")) || [];
     carts.map((e, i) => {
+        total = total + Number((e.price * 93).toFixed(2));
         const div = document.createElement("div");
         div.innerHTML = ` <div class="d-flex flex-column align-items-center">
             <div class="card mb-3 m-2" style="max-width: 540px;">
@@ -25,6 +28,7 @@ function displayCartsProducts() {
                  <ul class="list-group list-group-flush">        
                 <li class="list-group-item fs-5">Price : ₹${((e.price) * 93).toFixed(2)}</li>
                     <li class="list-group-item">Category : ${e.category}</li>
+                    <li class="list-group-item">QTY : ${e.qty}</li>
                     <li class="list-group-item">Rating : ${e.rating} ⭐</li>
                     <li class="list-group-item">${e.warrantyInformation}</li>
                  </ul>
@@ -36,6 +40,7 @@ function displayCartsProducts() {
         cartsDiv.appendChild(div);
     });
 
+    totalPrice.textContent = " Total : ₹" + (total.toFixed(2));
 }
 
 

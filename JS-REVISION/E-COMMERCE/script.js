@@ -1,11 +1,16 @@
 const productBox = document.getElementById("Product-Box");
-const allProducts = [];
+let allProducts = [];
 //Add to cart 
 async function addToCart(i) {
-    const res = await fetch("https://dummyjson.com/products");
-    const data = await res.json();
     let arr = JSON.parse(localStorage.getItem("carts")) || [];
-    arr.unshift(allProducts[i]);
+    const res = arr.findIndex((e) => e.id == allProducts[i].id);
+    if (res == -1) {
+        allProducts[i].qty = 1;
+        // console.log(qty);
+        arr.unshift(allProducts[i]);
+    } else {
+        arr[res].qty++;
+    }
     localStorage.setItem("carts", JSON.stringify(arr));
 }
 
