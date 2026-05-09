@@ -1,0 +1,9 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+}
+
+body {
+    background: linear-gradient(to left, #222831, #393E46);
+}

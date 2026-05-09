@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="height: 100vh; width: 100%;">
+    <div class="container w-50 p-5">
+        <h1 class="text-center">Task Manager</h1>
+        <!-- Add Tasks  -->
+        <section class="container d-flex justify-content-center gap-3 shadow rounded p-3 border border-white">
+            <input id="input-task" type="text" class="bg-transparent text-white w-50"
+                placeholder="Enter your task here... ">
+            <select aria-label="select Priority" id="input-priority" class="form-select bg-black text-white w-25">
+
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button id="add-task-button" type="button" class="btn btn-outline-secondary text-white w-25"> Add Task
+            </button>
+        </section>
+
+        <!-- Filter Tasks -->
+        <section class="container d-flex justify-content-center gap-3 shadow rounded p-3 border border-white my-3">
+            <input id="searched-task" type="text" class="bg-transparent text-white w-25"
+                placeholder="Search your task here... ">
+            <select aria-label="filter-priority" id="filter-priority" class="form-select bg-black text-white w-25">
+                <option value="All" selected>All</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <select aria-label="filter-status" id="filter-status" class="form-select bg-black text-white w-25">
+                <option value="All" selected>All</option>
+                <option value="Completed">Completed</option>
+                <option value="Pending">Pending</option>
+            </select>
+            <button id="filter-button" type="button" class="btn btn-outline-secondary text-white w-25"> Filter </button>
+        </section>
+
+        <!-- Display Tasks  -->
+        <section id="display-tasks-box"
+            class="container d-flex justify-content-center gap-3 flex-column shadow rounded p-3 border border-white ">
+            <h1 class="fs-5"> Your tasks are here... </h1>
+            <div class="d-flex justify-content-between shadow rounded border border-light p-3">
+                <p class="fs-5">Lorem ipsum dolor sit amet.</p>
+                <div>
+                    <button type="button" class="btn btn-warning me-2">Edit</button>
+                    <button type="button" class="btn btn-danger">Remove</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
