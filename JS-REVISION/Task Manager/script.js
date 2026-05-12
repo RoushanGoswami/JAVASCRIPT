@@ -24,18 +24,23 @@ const handleAddTask = () => {
   const status = false;
 
   const taskList = fetchTaskListFromLocalStrorage();
-  taskList.push({ task, priority, status });
+  taskList.unshift({ task, priority, status });
   updateTaskListToLocalStorage(taskList);
+  displayTasks();
 }
 // Display Tasks 
 const displayTasks = () => {
-  const taskList = fetchTaskListFromLocalStrorage();// get data 
   displayTasksBox.innerHTML = "";
+  const taskList = fetchTaskListFromLocalStrorage();// get data 
   taskList.map((task, i) => {
     const div = document.createElement("div");
-    div.innerHTML = `   <div class="d-flex justify-content-between shadow rounded border border-light p-3">
-                <p class="fs-5">${task.task}</p>
-                <div>
+    div.innerHTML = `   <div class="d-flex justify-content-between shadow rounded border ${task.priority == 'High' ? 'border-danger' : (task.priority == 'Medium') ? 'border-warning' : 'border-info'}  p-3">
+               <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                <label class="form-check-label" for="checkDefault">
+                </label>
+              </div> <div  class = "w-75 text-wrap"><p class="fs-5">${task.task}</p>
+                </div>               <div>
                     <button type="button" class="btn btn-warning me-2">Edit</button>
                     <button onclick="handleDeleteTask(${i})" type="button" class="btn btn-danger">Remove</button>
                 </div>
