@@ -9,8 +9,10 @@ const filterStatus = document.getElementById("filter-status");
 const filterButton = document.getElementById("filter-button");
 const displayTasksBox = document.getElementById("display-tasks-box");
 
+let taskList = [];// empty array to store the tasks 
+
 const fetchTaskListFromLocalStrorage = () => {
-  return JSON.parse(localStorage.getItem("task-list")) || [];
+  taskList = JSON.parse(localStorage.getItem("task-list")) || [];
 };
 
 const updateTaskListToLocalStorage = (taskList) => {
@@ -23,7 +25,6 @@ const handleAddTask = () => {
   const priority = inputPriority.value;
   const status = false;
 
-  const taskList = fetchTaskListFromLocalStrorage();
   taskList.unshift({ task, priority, status });
   updateTaskListToLocalStorage(taskList);
   displayTasks();
@@ -31,7 +32,6 @@ const handleAddTask = () => {
 // Display Tasks 
 const displayTasks = () => {
   displayTasksBox.innerHTML = "";
-  const taskList = fetchTaskListFromLocalStrorage();// get data 
   taskList.map((task, i) => {
     const div = document.createElement("div");
     div.innerHTML = `   <div class="d-flex justify-content-between shadow rounded border ${task.priority == 'High' ? 'border-danger' : (task.priority == 'Medium') ? 'border-warning' : 'border-info'}  p-3">
@@ -49,13 +49,29 @@ const displayTasks = () => {
   })
 }
 
+// handle priority
+
+const handlePriorityFilter = () => {
+  const priority = filterPriority.value;
+  fetchTaskListFromLocalStrorage();
+  if (priority == "All") {
+    fetchTaskListFromLocalStrorage();
+  } else {
+    taskList = taskList.filter((task) => task.priority == priority);
+  }
+  displayTasks();
+}
 // delete Button function 
 const handleDeleteTask = (i) => {
-  const taskList = fetchTaskListFromLocalStrorage();
   taskList.splice(i, 1);
   updateTaskListToLocalStorage(taskList);
+  fetchTaskListFromLocalStrorage();
   displayTasks();
 }
 
+filterButton.addEventListener("click", handlePriorityFilter)
+
 addTaskButton.addEventListener("click", handleAddTask);
+
+fetchTaskListFromLocalStrorage();
 displayTasks();
